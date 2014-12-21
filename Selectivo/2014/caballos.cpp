@@ -2,8 +2,27 @@
 
 using namespace std;
 
+typedef vector<int> vi;
+typedef vector<vi> vvi;
+typedef vector<string> vs;
+typedef set<int> se;
+typedef pair<int,int> pii;
+typedef long long int tint;
+
+#define forsn(i,s,n) for(int i = (int)(s); i<((int)n); i++)
+#define dforsn(i,s,n) for(int i = (int)(n)-1; i>=((int)s); i--)
 #define forn(i,n) for(int i=0;i<(int)(n);i++)
+#define decl(v, c) typeof(c) v = c
+#define forall(i, c) for(decl(i, c.begin()); i!=c.end(); ++i)
+#define rall(c) (c).rbegin(), (c).rend()
+#define all(c) (c).begin(), (c).end()
+#define D(a) << #a << "=" << a << " "
+
+
 #define si(a) int((a).size())
+#define pb push_back
+#define mp make_pair
+
 
 const int MAXN = 1010;
 char T[MAXN][MAXN]; //Tablero
@@ -21,6 +40,7 @@ int dp(int i,int j,int pos) {
     if (W[pos] != T[i][j]) return 0;
     if (pos == si(W)-1) return 1;
 
+
     int &res = DP[i][j][pos];
     if (res != -1) return res;
 
@@ -35,6 +55,8 @@ int dp(int i,int j,int pos) {
     return res;
 }
 
+
+
 void init() {
     //Inicializo DP
     forn(i,F)
@@ -44,9 +66,11 @@ void init() {
 
 }
 
+
+
 int main () {
 	freopen("caballos.in","r",stdin);
-	//freopen("caballos.out","w",stdout);
+	//freopen("out.txt","w",stdout);
 
 	ios_base::sync_with_stdio(false);
 
