@@ -2,6 +2,7 @@
  
  Año: 2014
  Certamen: Selectivo
+ Nivel: *
  Problema: 1
  Tags: pd, ajedrez, tablero
  
@@ -54,15 +55,13 @@ int dp(int i,int j,int pos) {
 
 //Inicializo DP
 void init() {
-    forn(i,F)
-        forn(j,C)
-            forn(k,8)
-                DP[i][j][k] = -1;
+    forn(i,F) forn(j,C) forn(k,8)
+		DP[i][j][k] = -1;
 }
 
 int main () {
 	freopen("caballos.in","r",stdin);
-	//freopen("caballos.out","w",stdout);
+	freopen("caballos.out","w",stdout);
 
 	//Optimización Entrada/Salida
 	ios_base::sync_with_stdio(false);
