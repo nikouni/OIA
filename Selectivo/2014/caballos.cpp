@@ -1,8 +1,10 @@
 /*
+ 
  Año: 2014
  Certamen: Selectivo
  Problema: 1
  Tags: pd, ajedrez, tablero
+ 
 */
 
 #include <bits/stdc++.h>
@@ -13,8 +15,8 @@ using namespace std;
 #define si(a) int((a).size())
 
 const int MAXN = 1010;
-char T[MAXN][MAXN]; //Tablero
-int DP[MAXN][MAXN][8]; //F x C x 8
+char T[MAXN][MAXN]; //Tablero: F x C
+int DP[MAXN][MAXN][8]; //Memoria PD: F x C x 8
 
 string W = "CABALLO"; //Palabra a buscar
 int F,C,M;
@@ -42,7 +44,7 @@ int dp(int i,int j,int pos) {
 		//Genero la nueva posicion (ni,nj)
         int ni = i + di[d];
         int nj = j + dj[d];
-        //Si la (ni,nj) está dentro del tablero, llamo recursivamente
+        //Si (ni,nj) está dentro del tablero, llamo recursivamente
         if (ni >= 0 && nj >= 0 && ni < F && nj < C)
             res = (res + dp(ni,nj,pos+1)) % M;
     }
