@@ -1,0 +1,11 @@
+brute force
+dp - dynamic programming
+geometry
+graphs
+greedy
+math
+recursion
+search
+simulation
+sorting
+strings
