@@ -3,6 +3,7 @@
  Año: 2014
  Certamen: Selectivo
  Nivel: *
+ Día: 1
  Problema: 1
  Tags: pd, ajedrez, tablero
 

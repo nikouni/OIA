@@ -1,10 +1,12 @@
 /*
- 
+
  Año: 2014
  Certamen: Selectivo
+ Nivel: *
+ Día: 1
  Problema: 1
  Tags: pd, ajedrez, tablero
- 
+
 */
 
 #include <bits/stdc++.h>
@@ -25,7 +27,7 @@ int dj[] = {-2,-1,1,2,2,1,-1,-2};
 /*
 Implementación de la dinámica memoized.
 Retorna la cantidad de formas de armar la palabra W[pos..]
-partiendo de la casilla T[i][j] 
+partiendo de la casilla T[i][j]
 */
 int dp(int i,int j,int pos) {
 
@@ -77,14 +79,14 @@ int main () {
 			for(int j = 0; j < C; j++)
 				res = (res + dp(i,j,0)) % M;
 
-		cout << res << endl;		
+		cout << res << endl;
 	}
-    
+
     return 0;
 }
 
 /*
- 
+
  Tiempo de ejecución: O(F * C * W.size())
- 
+
 */
