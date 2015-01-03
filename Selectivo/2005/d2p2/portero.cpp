@@ -2,25 +2,10 @@
 
 using namespace std;
 
-typedef vector<int> vi;
-typedef vector<vi> vvi;
-typedef vector<string> vs;
-typedef set<int> se;
 typedef pair<int,int> pii;
-typedef long long int tint;
 
-#define forsn(i,s,n) for(int i = (int)(s); i<((int)n); i++)
 #define dforsn(i,s,n) for(int i = (int)(n)-1; i>=((int)s); i--)
 #define forn(i,n) for(int i=0;i<(int)(n);i++)
-#define decl(v, c) typeof(c) v = c
-#define forall(i, c) for(decl(i, c.begin()); i!=c.end(); ++i)
-#define rall(c) (c).rbegin(), (c).rend()
-#define all(c) (c).begin(), (c).end()
-#define D(a) << #a << "=" << a << " "
-
-
-#define si(a) int((a).size())
-#define pb push_back
 #define mp make_pair
 
 const int MAXN = 1000 + 10;
@@ -32,10 +17,9 @@ int DP[MAXN][MAXN];
 //Arreglo para reconstruir el camino
 pii next[MAXN][MAXN];
 
-
 int main () {
 	freopen("portero.in","r",stdin);
-	//freopen("portero.out","w",stdout);
+	freopen("portero.out","w",stdout);
 
 	ios_base::sync_with_stdio(false);
 
@@ -46,9 +30,11 @@ int main () {
 
         forn(i,n)
             cin >> D[i];
+
         cin >> m;
         forn(i,m)
             cin >> C[i];
+
         cin >> p;
         forn(i,p) {
             string s;
@@ -66,6 +52,7 @@ int main () {
                     DP[i][j] = 0;
                     continue;
                 }
+                //Si D[i] y C[j] son pareja
                 if (P.count(mp(D[i],C[j]))) {
                     DP[i][j] = 1 + DP[i+1][j+1];
                     //En next guardo la dirección en que me moví
@@ -85,8 +72,7 @@ int main () {
 
         if (DP[0][0] == 0) continue;
 
-        int i = 0,j=0;
-
+        int i = 0 , j = 0;
         while(1) {
             pii nex = next[i][j];
             if (nex == mp(1,1)) {
@@ -98,7 +84,6 @@ int main () {
         }
 
     }
-
 
   return 0;
 
