@@ -1,3 +1,14 @@
+/*
+
+ Año: 2005
+ Certamen: Selectivo
+ Nivel: *
+ Día: 2
+ Problema: 2
+ Tags: pd
+
+*/
+
 #include <bits/stdc++.h>
 
 using namespace std;
